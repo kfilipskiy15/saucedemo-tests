@@ -11,10 +11,6 @@ class LoginPage(BasePage):
     credentials_div = (By.CSS_SELECTOR, "#login_credentials")
     password_div = (By.CSS_SELECTOR, ".login_password")
 
-    def __init__(self, driver):
-        self.driver = driver
-        super().__init__(driver)
-
     def logo(self):
         logo = self.get_visible_element(locator=self.login_logo)
         return logo

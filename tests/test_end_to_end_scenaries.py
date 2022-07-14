@@ -1,7 +1,7 @@
 from pages.cart import ShopingCartPage
 from pages.checkout import CheckOutStepOne, CheckOutStepTwo, \
     CheckOutCompletePage
-from pages.inventory import InventoryPage
+from pages.inventory import InventoryPage, Products
 from pages.login_page import LoginPage
 
 
@@ -32,7 +32,7 @@ class TestProductCheckout:
     @classmethod
     def add_product_to_cart(cls, driver):
         inventory_page = InventoryPage(driver)
-        inventory_page.add_first_product_to_cart()
+        inventory_page.add_product_to_cart(Products.sauce_lab_backpack)
         inventory_page.proceed_to_cart()
 
     @classmethod
